@@ -1,0 +1,15 @@
+<div *ngFor="let key of objectKeys(citizens)">
+  <nz-card class="citizen-container">
+    <nz-card-meta nzTitle="{{ citizens[key].name }}"></nz-card-meta>
+    <p nz-paragraph>{{ dayMessages[key] }}</p>
+    <p nz-paragraph>{{ roleMessages[key] }}</p>
+    <p nz-paragraph>{{ ageMessages[key] }}</p>
+    <button nz-button nzType="primary" (click)="showStory(key)">Esconder Historia</button>
+    <div *ngIf="storyVisible[key]" class="story-container">
+      <nz-card>
+        <p>{{ storyMessages[key] }}</p>
+      </nz-card>
+    </div>
+  </nz-card>
+  
+  
